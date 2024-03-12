@@ -22,7 +22,7 @@ async def parse_info():
         async with session.get(os.environ.get('url', 'https://ya.ru')) as response:
             return f'Code: {response.status}'
 # 1
-# 2
+# new text here
 # 3
 
 @app.route('/drinks/', methods=['DELETE'])
