@@ -21,7 +21,9 @@ async def parse_info():
     async with ClientSession() as session:
         async with session.get(os.environ.get('url', 'https://ya.ru')) as response:
             return f'Code: {response.status}'
-
+# 1
+# 2
+# 3
 
 @app.route('/drinks/', methods=['DELETE'])
 def delete_drink():
