@@ -22,6 +22,7 @@ async def parse_info():
         async with session.get(os.environ.get('url', 'https://ya.ru')) as response:
             return f'Code: {response.status}'
 # 1
+# new text here
 # NOW IT'S MINE COMMENT! AHAHAHHAHAHA AJAJAJAJ! khe khe
 # 3
 
