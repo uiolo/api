@@ -1,10 +1,11 @@
+import os
 from flask import Flask, request, jsonify
 from random import randint
+from aiohttp import ClientSession
 
 app = Flask(__name__)
 
 # a random comment
-
 db = {
     2: {'name':'orange_juice',
      'price': 20
@@ -13,6 +14,22 @@ db = {
      'price': 15
      },
     }
+
+
+@app.route('/parse/')
+async def parse_info():
+    async with ClientSession() as session:
+        async with session.get(os.environ.get('url', 'https://ya.ru')) as response:
+            return f'Code: {response.status}'
+
+
+@app.route('/drinks/', methods=['DELETE'])
+def delete_drink():
+    try:
+        del db[request.json[id]]
+    except Exception as ex:
+        return {'success':False, 'error': ex}
+    return {'success':True, 'error': None}
 
 
 @app.route('/drinks/<id>', methods=['GET'])
