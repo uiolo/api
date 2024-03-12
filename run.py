@@ -3,6 +3,8 @@ from random import randint
 
 app = Flask(__name__)
 
+# a random comment
+
 db = {
     2: {'name':'orange_juice',
      'price': 20
