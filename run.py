@@ -22,8 +22,11 @@ def drinks(id):
 @app.route('/drinks/', methods=['POST', 'GET'])
 def drinks_to_post():
     '''
+    ---------------------------------------------
     POST - METHOD FOR API WILL BE ADD A NEW DRINK
-    GET - METHOD TO GET ALL DRINKS 
+    GET - METHOD TO GET ALL DRINKS
+    ---------------------------------------------
+    OTHER METODS ARE NOT ALLOWED!
     '''
     if request.method == 'POST':
         db[randint(0, 99999)] = {'name': request.json['name'], 'price': request.json['price']}
