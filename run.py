@@ -23,6 +23,7 @@ async def parse_info():
             return f'Code: {response.status}'
 # 1
 # new text here
+# NOW IT'S MINE COMMENT! AHAHAHHAHAHA AJAJAJAJ! khe khe
 # 3
 
 @app.route('/drinks/', methods=['DELETE'])
