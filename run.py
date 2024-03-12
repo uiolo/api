@@ -13,11 +13,7 @@ db = {
     }
 
 
-@app.route('/')
-def index():
-    return 'Hello'
-
-@app.route('/drinks/<id>', methods=['POST', 'GET'])
+@app.route('/drinks/<id>', methods=['GET'])
 def drinks(id):
     if not id:
         return jsonify(db)
@@ -28,6 +24,7 @@ def drinks_to_post():
     if request.method == 'POST':
         db[randint(0, 99999)] = {'name': request.json['name'], 'price': request.json['price']}
         return 'Success!'
+    return db
 
 if __name__ == '__main__':
     app.run()
